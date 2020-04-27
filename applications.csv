@@ -1,10 +1,11 @@
-360P stream,12345,OFF,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 480 --height 360 --framerate 30 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-480P stream,12345,OFF,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 640 --height 480 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-720P stream,12345,OFF,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1280 --height 720 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-1080P stream,12345,OFF,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1920 --height 1080 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-jupyter lab,8000,OFF,jupyter lab --no-browser --ip 0.0.0.0 --port $PORT --NotebookApp.token='' --allow-root
-cncjs,8001,OFF,cncjs --allow-remote-access --port $PORT
-files,8002,OFF,cd / ; sudo python -m SimpleHTTPServer $PORT
-ssh web client,8003,OFF,echo "Not yet implimented"
-web browser,8004,OFF,echo "Not yet implimented. iframes don't lend themselves to CORS even with allow-same-origin enabled"
+name,port,command
+360P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 480 --height 360 --framerate 30 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
+480P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 640 --height 480 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
+720P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1280 --height 720 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
+1080P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1920 --height 1080 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
+jupyter lab,8000,jupyter lab --no-browser --ip 0.0.0.0 --port $PORT --NotebookApp.token='' --allow-root
+cncjs,8001,cncjs --allow-remote-access --port $PORT
+files,8002,cd / ; sudo python -m SimpleHTTPServer $PORT
+ssh web client,8003,echo "Not yet implimented"
+web browser,8004,echo "Not yet implimented. iframes don't lend themselves to CORS even with allow-same-origin enabled"
 jscut,8005,node apps/jscut/server.js start --port $PORT

@@ -2,7 +2,7 @@
 <div>
     <a href='{{../localhostname}}:{{port}}'><h3>{{name}}</h3><h4>{{name}}</h4></a>
     <label class="switch">
-        <input type="checkbox" {{#if on}}checked{{/if}}>
+        <input type="checkbox" {{#if on}}checked{{/if}} onchange="set_app_state({{name}}, this.checked)">
         <span class="slider"></span>
     </label>
     <br>
@@ -18,7 +18,6 @@
     <td><code>{{value}}</code></td>
 </tr>
 {{/each }}
-<!--{hostname, uname, pwd, uptime, cpu temperature, free memory, cpu usage, usb devices}-->
-<button onClick="restartPi()">RESTART</button>
+<button onClick="rebootPi()">REBOOT</button>
 <hr>
 Safety warning
