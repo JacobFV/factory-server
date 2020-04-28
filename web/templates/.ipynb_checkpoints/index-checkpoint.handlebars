@@ -1,23 +1,25 @@
+<table>
 {{#each apps}}
-<div>
-    <a href='{{../localhostname}}:{{port}}'><h3>{{name}}</h3><h4>{{name}}</h4></a>
-    <label class="switch">
-        <input type="checkbox" {{#if on}}checked{{/if}} onchange="set_app_state({{name}}, this.checked)">
-        <span class="slider"></span>
-    </label>
-    <br>
-</div>
+<tr>
+    <td><a href='http://{{../localhostname}}:{{port}}'>{{name}}</a></td>
+    <td>:{{port}}</td>
+    <td>
+        <label class="switch">
+            <input type="checkbox" {{#if state}}checked{{/if}} onchange="set_app_state('{{name}}', this.checked)">
+            <span class="slider"></span>
+        </label>
+    </td>
+</tr>
 {{/each }}
+</table>
 <hr>
 <h2>RPi4 controller</h2>
-<code>ssh pi@factory.local</code>
 <br>
+<table style="width:100%">
 {{#each other_data}}
 <tr>
     <td>{{key}}</td>
     <td><code>{{value}}</code></td>
 </tr>
 {{/each }}
-<button onClick="rebootPi()">REBOOT</button>
-<hr>
-Safety warning
+</table>

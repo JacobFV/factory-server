@@ -4,11 +4,17 @@
     <title>Factory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="slider_styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src="templatesCompiled.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <h1>Factory</h1>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
-    <script src="templatesCompiled.js"></script>
-    <script scr="main.js"></script>
+    also visit port <a href='factory.local:8090'>:8090</a> for UV4L!
+    <div id="content"></div>
+    <button onClick="rebootPi()">REBOOT</button>
+    <hr>
+    Safety warning
 </body>
 </html>
