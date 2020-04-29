@@ -44,7 +44,7 @@ templates['index'] = template({"1":function(container,depth0,helpers,partials,da
         return undefined
     };
 
-  return "<table>\n"
+  return "<table style=\"width:100%;\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"apps") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":0},"end":{"line":13,"column":10}}})) != null ? stack1 : "")
     + "</table>\n<hr>\n<h2>RPi4 controller</h2>\n<br>\n<table style=\"width:100%\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"other_data") : depth0),{"name":"each","hash":{},"fn":container.program(4, data, 0, blockParams, depths),"inverse":container.noop,"data":data,"loc":{"start":{"line":19,"column":0},"end":{"line":24,"column":10}}})) != null ? stack1 : "")
@@ -94,7 +94,7 @@ templates['.ipynb_checkpoints/index-checkpoint'] = template({"1":function(contai
         return undefined
     };
 
-  return "<table>\n"
+  return "<table style=\"width:100%;\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"apps") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":0},"end":{"line":13,"column":10}}})) != null ? stack1 : "")
     + "</table>\n<hr>\n<h2>RPi4 controller</h2>\n<br>\n<table style=\"width:100%\">\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"other_data") : depth0),{"name":"each","hash":{},"fn":container.program(4, data, 0, blockParams, depths),"inverse":container.noop,"data":data,"loc":{"start":{"line":19,"column":0},"end":{"line":24,"column":10}}})) != null ? stack1 : "")

@@ -50,7 +50,7 @@ let context = {
     ]
 }
 //get app states from applications.csv
-const app_states = {} //keys: name, vals: PID or null if not active
+//const app_states = {} //keys: name, vals: PID or null if not active
 const CLIENT_APP_ON = true
 const CLIENT_APP_OFF = false
 let applicationsArray=[]
@@ -63,15 +63,15 @@ csv().fromFile(csvPath).then(jsonObj => {
 applicationsArray = jsonObj
 
 context['apps'] = applicationsArray.map((application) => {
-    app_states[application.name] = CLIENT_APP_OFF
+    //app_states[application.name] = CLIENT_APP_OFF
     return {
         'name': application.name,
         'port': application.port,
         'state': CLIENT_APP_OFF
     }
 })
-console.log('context[apps]=',context['apps'])
-console.log('app_states populated')
+//console.log('context[apps]=',context['apps'])
+//console.log('app_states populated')
     
 
 function set_field(key, value) {
@@ -85,17 +85,24 @@ function set_field(key, value) {
 function set_app_state(appname, state) {
     context['apps'].find(app => {
         if(app['name'] == appname) {
+            let was_different = false;
+            if(app['state'] != state) {
+                console.log(`changing ${appname} state from ${app['state']} to ${state}`)
+            }
             app['state'] = state
+            if(was_different) {
+                console.log(`${appname} state is now ${app['state']}`)
+            }
         }
     })
 }
     
 function update_context_var() {
     //update context[apps].state
-    Object.keys(app_states).forEach(app_name => {
-        set_app_state(app_name, app_states[app_name])
+    //Object.keys(app_states).forEach(app_name => {
+    //    set_app_state(app_name, app_states[app_name])
         //console.log(`updating ${app_name} state to ${app_states[app_name]}. Now ${context['apps'][app_name]}`)
-    })
+    //})
     
     //uptime
     exec(
@@ -141,22 +148,14 @@ setInterval(update_context_var, 1000)
 
 function enable_application(appname) {
     console.log('req to launch',appname)
-    if(app_states[appname] == CLIENT_APP_OFF) {
+    if(context['apps'].find(app => app.name == appname).state == CLIENT_APP_OFF) {
         console.log('launching',appname)
         app_data = applicationsArray.find(app => app.name == appname)
         cmd.get(
-            'PORT='+app_data.port+'; '+app_data.command+' & echo $!',    
-            function(err, data, stderr){
-                console.log(err,data,stderr)
-                console.log(`${appname} launched!`)
-                app_states[appname] = CLIENT_APP_ON
-                console.log(app_states)
-                if (!err) {//data.split(' ')[1]
-                } else {
-                   console.log('error launching app', err)
-                }
-            }
+            'PORT='+app_data.port+'; '+app_data.command,    
+            function(err, data, stderr) { }
         )
+        context['apps'].find(app => app.name == appname).state = CLIENT_APP_ON
     }
 }
 
@@ -167,7 +166,7 @@ function disable_application(appname) {
             `fuser -k ${port}/tcp`,
             function(err, data, stderr) {
                 console.log(`killed ${appname} on ${port}`)
-                app_states[appname]=CLIENT_APP_OFF
+                //app_states[appname]=CLIENT_APP_OFF
                 /*let pid = data.split(' ')[1]
                 cmd.get(`kill ${pid}`, (e2,d2,stde2) => {
                     console.log(`killed process ${pid} for name:${appname}`)
@@ -175,6 +174,7 @@ function disable_application(appname) {
                 })*/
             }
         )
+        context['apps'].find(app => app.name == appname).state = CLIENT_APP_OFF
         /*cmd.get(
             `kill ${app_pids[appname]}`,
             function(err, data, stderr){
@@ -216,11 +216,11 @@ app.use('/api/reboot', function(req, res, next) {
     res.sendStatus(200)
 })
 
-console.log('setting up static serve')
+//console.log('setting up static serve')
 app.use(express.static(path.join(__dirname,'web')));
-console.log('everything ready')
+//console.log('everything ready')
 app.listen(80, () => console.log('listening on port 80'));
-console.log('last LOC')
+//console.log('last LOC')
     
     
 })

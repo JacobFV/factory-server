@@ -1,8 +1,6 @@
 name,port,command
-360P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 480 --height 360 --framerate 30 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-480P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 640 --height 480 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-720P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1280 --height 720 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
-1080P stream,12345,sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 1920 --height 1080 --framerate 20 --server-option '--port=$PORT' --server-option '--max-queued-connections=30' --server-option '--max-streams=25' --server-option '--max-threads=29'
+480p camera,9000,python3 apps/camera480p/server.py
+1080p camera,9000,python3 apps/camera1080p/server.py
 jupyter lab,8000,jupyter lab --no-browser --ip 0.0.0.0 --port $PORT --NotebookApp.token='' --allow-root
 cncjs,8010,cncjs --allow-remote-access --port $PORT
 files,8020,cd / ; sudo python -m SimpleHTTPServer $PORT

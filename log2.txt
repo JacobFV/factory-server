@@ -1,0 +1,26 @@
+loading csv /root/factory-server /root/factory-server/applications.csv
+listening on port 80
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: 'camera', port: '9000', state: false },
+    { name: 'camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: false },
+    { name: 'cncjs', port: '8010', state: false },
+    { name: 'files', port: '8020', state: false },
+    { name: 'jscut', port: '8030', state: false }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '0:0:24' },
+    { key: 'cpu temp', value: "temp=41.0'C" },
+    { key: 'cpu usage', value: '19.2505%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' }
+  ]
+}
+req to launch jupyter lab
+launching jupyter lab
