@@ -3,8 +3,8 @@ listening on port 80
 {
   localhostname: 'factory.local',
   apps: [
-    { name: 'camera', port: '9000', state: false },
-    { name: 'camera', port: '9000', state: false },
+    { name: '480p camera', port: '9000', state: false },
+    { name: '1080p camera', port: '9000', state: false },
     { name: 'jupyter lab', port: '8000', state: false },
     { name: 'cncjs', port: '8010', state: false },
     { name: 'files', port: '8020', state: false },
@@ -15,12 +15,180 @@ listening on port 80
     { key: 'hostname', value: 'factory.local' },
     { key: 'username', value: 'pi' },
     { key: 'password', value: 'raspberry' },
-    { key: 'uptime', value: '0:0:24' },
-    { key: 'cpu temp', value: "temp=41.0'C" },
-    { key: 'cpu usage', value: '19.2505%' },
+    { key: 'uptime', value: '0:6:58' },
+    { key: 'cpu temp', value: "temp=40.0'C" },
+    { key: 'cpu usage', value: '4.6956%' },
     { key: 'mem usage', value: '' },
-    { key: 'usb devices', value: 'UNCOMMENT' }
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}
+req to launch 480p camera
+launching 480p camera
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: false },
+    { name: 'cncjs', port: '8010', state: false },
+    { name: 'files', port: '8020', state: false },
+    { name: 'jscut', port: '8030', state: false }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '0:11:35' },
+    { key: 'cpu temp', value: "temp=42.0'C" },
+    { key: 'cpu usage', value: '4.74097%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}
+killed 480p camera on 9000
+req to launch 1080p camera
+launching 1080p camera
+killed 1080p camera on 9000
+req to launch 480p camera
+launching 480p camera
+req to launch cncjs
+launching cncjs
+req to launch files
+launching files
+req to launch jscut
+launching jscut
+req to launch jupyter lab
+launching jupyter lab
+killed cncjs on 8020
+killed files on 8020
+killed jscut on 8030
+killed jupyter lab on 8000
+req to launch jupyter lab
+launching jupyter lab
+killed jupyter lab on 8000
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: false },
+    { name: 'cncjs', port: '8010', state: false },
+    { name: 'files', port: '8020', state: false },
+    { name: 'jscut', port: '8030', state: false }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '1:21:23' },
+    { key: 'cpu temp', value: "temp=40.0'C" },
+    { key: 'cpu usage', value: '4.62893%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
   ]
 }
 req to launch jupyter lab
 launching jupyter lab
+req to launch cncjs
+launching cncjs
+req to launch files
+launching files
+req to launch jscut
+launching jscut
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: true },
+    { name: 'cncjs', port: '8010', state: true },
+    { name: 'files', port: '8020', state: true },
+    { name: 'jscut', port: '8030', state: true }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '1:21:40' },
+    { key: 'cpu temp', value: "temp=41.0'C" },
+    { key: 'cpu usage', value: '4.66822%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: true },
+    { name: 'cncjs', port: '8010', state: true },
+    { name: 'files', port: '8020', state: true },
+    { name: 'jscut', port: '8030', state: true }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '1:21:46' },
+    { key: 'cpu temp', value: "temp=41.0'C" },
+    { key: 'cpu usage', value: '4.66801%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: true },
+    { name: 'cncjs', port: '8010', state: true },
+    { name: 'files', port: '8020', state: true },
+    { name: 'jscut', port: '8030', state: true }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '13:31:38' },
+    { key: 'cpu temp', value: "temp=35.0'C" },
+    { key: 'cpu usage', value: '4.28486%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}
+{
+  localhostname: 'factory.local',
+  apps: [
+    { name: '480p camera', port: '9000', state: true },
+    { name: '1080p camera', port: '9000', state: false },
+    { name: 'jupyter lab', port: '8000', state: true },
+    { name: 'cncjs', port: '8010', state: true },
+    { name: 'files', port: '8020', state: true },
+    { name: 'jscut', port: '8030', state: true }
+  ],
+  other_data: [
+    { key: 'ssh', value: 'pi@factory.local' },
+    { key: 'hostname', value: 'factory.local' },
+    { key: 'username', value: 'pi' },
+    { key: 'password', value: 'raspberry' },
+    { key: 'uptime', value: '13:31:59' },
+    { key: 'cpu temp', value: "temp=36.0'C" },
+    { key: 'cpu usage', value: '4.2859%' },
+    { key: 'mem usage', value: '' },
+    { key: 'usb devices', value: 'UNCOMMENT' },
+    { key: 'vpn', value: 'contact operator' }
+  ]
+}

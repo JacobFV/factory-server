@@ -4,4 +4,4 @@ name,port,command
 jupyter lab,8000,jupyter lab --no-browser --ip 0.0.0.0 --port $PORT --NotebookApp.token='' --allow-root
 cncjs,8010,cncjs --allow-remote-access --port $PORT
 files,8020,cd / ; sudo python -m SimpleHTTPServer $PORT
-jscut,8030,node apps/jscut/server.js start --port $PORT
+3DP GCode,8030,cncjs --allow-remote-access --port $PORT

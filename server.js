@@ -47,6 +47,28 @@ let context = {
             'key':'usb devices',
             'value':null
         },
+        {
+            'key':'vpn',
+            'value':'contact operator'
+        },
+    ],
+    'web_apps': [
+        {
+            'name': 'Kiri:Moto',
+            'url': `hhttps://grid.space/kiri/`
+        },
+        {
+            'name': 'Meta:Moto',
+            'url': `https://grid.space/meta/`
+        },
+        {
+            'name': 'JS Cut',
+            'url': `http://jscut.org/jscut.html`
+        },
+        {
+            'name': 'UV4L Server',
+            'url': `http://${localhostname}:8090/`
+        },
     ]
 }
 //get app states from applications.csv
