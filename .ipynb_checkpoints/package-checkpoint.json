@@ -1,0 +1,27 @@
+{
+  "name": "factory-server",
+  "version": "1.0.0",
+  "description": "application hub for my internet factory",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobFV/factory-server.git"
+  },
+  "keywords": [
+    "automation"
+  ],
+  "author": "Jacob Valdez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JacobFV/factory-server/issues"
+  },
+  "homepage": "https://github.com/JacobFV/factory-server#readme"
+}

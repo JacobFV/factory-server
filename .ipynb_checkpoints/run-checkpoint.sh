@@ -1,0 +1,1 @@
+node /root/factory-server/server.js
