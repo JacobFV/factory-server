@@ -43,10 +43,6 @@ let context = {
             'key':'usb devices',
             'value':null
         },
-        {
-            'key':'vpn',
-            'value':'contact operator'
-        },
     ],
     'web_apps': [
         {
@@ -60,10 +56,6 @@ let context = {
         {
             'name': 'JS Cut',
             'url': `http://jscut.org/jscut.html`
-        },
-        {
-            'name': 'UV4L Server',
-            'url': `http://${localhostname}:8090/`
         },
         { 'name':'NC Viewer', 'url':'https://ncviewer.com'}, {'name':'notes', 'url':'https://docs.google.com/document/d/10gQe1Vazsi64UkjarB6-xqW4kniOzVpVKTBaeNAh8x8/edit'}
     ]
