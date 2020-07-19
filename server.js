@@ -25,7 +25,7 @@ let context = {
         },
         {
             'key':'password',
-            'value':'raspberry'
+            'value':'build'
         },
         {
             'key':'uptime',
@@ -37,10 +37,6 @@ let context = {
         },
         {
             'key':'cpu usage',
-            'value':null
-        },
-        {
-            'key':'mem usage',
             'value':null
         },
         {
@@ -161,7 +157,7 @@ function update_context_var() {
     exec(
         `lsusb`,
         function(error, stdout, stderr){ 
-            set_field('usb devices', 'UNCOMMENT')//stdout) 
+            set_field('usb devices', 'stdout') 
         }
     )
     //console.clear()
