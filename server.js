@@ -6,7 +6,7 @@ const csv = require('csvtojson')
 const exec = require('child_process').exec
 const spawn = require('child_process').spawn
 
-localhostname = 'factory.local'
+localhostname = 'factory.lan'
 let context = {
     'localhostname' : localhostname,
     'apps' : [ ],
